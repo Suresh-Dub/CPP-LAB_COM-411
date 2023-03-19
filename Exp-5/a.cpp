@@ -1,39 +1,61 @@
-//• To add the details of a course using a parameterized constructor of course class.
-
-
+//To add the details of a course using a parameterized constructor of course class.
 #include <iostream>
 #include <string>
-
 using namespace std;
 
 class Course {
-public:
-    string name;
-    int code;
-    int duration;
+ private:                        // Data members of class course
+  std::string course_name;
+  std::string course_ID;
+  std::string semester;
 
-    // Parameterized constructor to add course details
-    Course(string n, int c, int d) {
-        name = n;
-        code = c;
-        duration = d;
-    }
+
+ public:
+  Course(std::string id, std::string n, std::string sem)
+  {                                                          //Parameterized Constructor to add the details of course
+    semester = sem;
+    course_ID = id;
+    course_name = n;
+  }
+
+  void display()                                         //Member Function to display the details
+   {
+    std::cout << "\nSemester: " << semester << std::endl;
+    std::cout << "Course ID: " << course_ID << std::endl;
+    std::cout << "Course Name: " << course_name << std::endl;
+  }
 };
 
 int main() {
-    // Add course details using parameterized constructor
-    Course c1("C++ Programming", 101, 3);
-    Course c2("Data Structures and Algorithms", 102, 4);
-    Course c3("Web Development", 103, 2);
-    Course c4("Database Management", 104, 3);
+    int n;
+    std::string semester;
+    cout << "Enter the Semester: ";
+    cin >> semester;
+    cout << "Enter the number of Subjects: ";
+    cin >> n;
 
-    // Print course details
-    cout << "Course Details:" << endl;
-    cout << "Name: " << c1.name << ", Code: " << c1.code << ", Duration: " << c1.duration << " year(s)" << endl;
-    cout << "Name: " << c2.name << ", Code: " << c2.code << ", Duration: " << c2.duration << " year(s)" << endl;
-    cout << "Name: " << c3.name << ", Code: " << c3.code << ", Duration: " << c3.duration << " year(s)" << endl;
-    cout << "Name: " << c4.name << ", Code: " << c4.code << ", Duration: " << c4.duration << " year(s)" << endl;
+    Course*courses[n];
+  for (int i = 0; i < n; i++) {
+  std::string course_name;
+  std::string course_ID;
 
-    return 0;
+  std::cout << "\nCourse ID: " ;
+  std::cin>> course_ID;
+
+  std::cout << "Course Name: ";
+  std::cin>>course_name;
+
+  courses[i] = new Course(course_ID, course_name, semester);
+    }
+
+  cout << "\nDetails of course:" << endl;
+    for (int i = 0; i < n; i++) {
+        courses[i]->display();
+    }
+
+  return 0;
 }
+
+
+
 
