@@ -1,4 +1,4 @@
-//To add the details of a course using a parameterized constructor of course class.
+//Activity 5 To add the details of a course using a parameterized constructor of course class.
 #include <iostream>
 #include <string>
 using namespace std;
@@ -56,6 +56,7 @@ int main() {
   return 0;
 }
 
+OUTPUT
 
 
 
