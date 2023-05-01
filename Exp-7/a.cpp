@@ -1,6 +1,4 @@
 //• To implement inheritance for a UGCourse class, PCourse class and DiplomaCourse class.
-
-
 #include <iostream>
 #include <string>
 
@@ -53,20 +51,52 @@ public:
 };
 
 int main() {
-    // Create a UGCourse object and print details
-    UGCourse u1("Computer Science", 101, 3);
-    cout << "UG Course Details:" << endl;
+    // Create a UGCourse object and prompt user to enter details
+    cout << "Enter UG Course Details:" << endl;
+    string name;
+    int code, duration;
+    cout << "Name: ";
+    cin >> name;
+    cout << "Code: ";
+    cin >> code;
+    cout << "Duration (in years): ";
+    cin >> duration;
+    UGCourse u1(name, code, duration);
+    cout << endl << "UG Course Details:" << endl;
     u1.printCourse();
 
-    // Create a PCourse object and print details
-    PCourse p1("Computer Engineering", 201, 4, "Software Engineering");
-    cout << "P Course Details:" << endl;
+    // Create a PCourse object and prompt user to enter details
+    cout << endl << "Enter P Course Details:" << endl;
+    string pname, specialization;
+    int pcode, pduration;
+    cout << "Name: ";
+    cin >> pname;
+    cout << "Code: ";
+    cin >> pcode;
+    cout << "Duration (in years): ";
+    cin >> pduration;
+    cout << "Specialization: ";
+    cin >> specialization;
+    PCourse p1(pname, pcode, pduration, specialization);
+    cout << endl << "P Course Details:" << endl;
     p1.printCourse();
 
-    // Create a DiplomaCourse object and print details
-    DiplomaCourse d1("Information Technology", 301, 2, "Networking");
-    cout << "Diploma Course Details:" << endl;
+    // Create a DiplomaCourse object and prompt user to enter details
+    cout << endl << "Enter Diploma Course Details:" << endl;
+    string dname, field;
+    int dcode, dduration;
+    cout << "Name: ";
+    cin >> dname;
+    cout << "Code: ";
+    cin >> dcode;
+    cout << "Duration (in years): ";
+    cin >> dduration;
+    cout << "Field: ";
+    cin >> field;
+    DiplomaCourse d1(dname, dcode, dduration, field);
+    cout << endl << "Diploma Course Details:" << endl;
     d1.printCourse();
 
     return 0;
 }
+
